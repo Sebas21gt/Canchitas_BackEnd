@@ -98,4 +98,4 @@ GET http://127.0.0.1:3010/api/users
 ```
 
 ## For Support
-- [Remberto Gonzales Cruz](rembertus@gmail.com)
+- [Sebastian Gonzales Tito](sebasteriogt@gmail.com)
