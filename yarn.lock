@@ -681,18 +681,23 @@
 "@types/estree@*", "@types/estree@^0.0.51":
   version "0.0.51"
 
-"@types/express-serve-static-core@^4.17.18":
-  version "4.17.28"
+"@types/express-serve-static-core@^4.17.33":
+  version "4.17.35"
+  resolved "https://registry.npmjs.org/@types/express-serve-static-core/-/express-serve-static-core-4.17.35.tgz"
+  integrity sha512-wALWQwrgiB2AWTT91CB62b6Yt0sNHpznUXeZEcnPU3DRdlDIz74x8Qg1UUYKSVFi+va5vKOLYRBI1bRKiLLKIg==
   dependencies:
     "@types/node" "*"
     "@types/qs" "*"
     "@types/range-parser" "*"
+    "@types/send" "*"
 
-"@types/express@^4.17.13":
-  version "4.17.13"
+"@types/express@^4.17.17":
+  version "4.17.17"
+  resolved "https://registry.npmjs.org/@types/express/-/express-4.17.17.tgz"
+  integrity sha512-Q4FmmuLGBG58btUnfS1c1r/NQdlp3DMfGDGig8WhfpA2YRUtEkxAjkZb0yvplJGYdF1fsQ81iMDcH24sSCNC/Q==
   dependencies:
     "@types/body-parser" "*"
-    "@types/express-serve-static-core" "^4.17.18"
+    "@types/express-serve-static-core" "^4.17.33"
     "@types/qs" "*"
     "@types/serve-static" "*"
 
@@ -745,9 +750,21 @@
 
 "@types/qs@*":
   version "6.9.7"
+  resolved "https://registry.npmjs.org/@types/qs/-/qs-6.9.7.tgz"
+  integrity sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==
 
 "@types/range-parser@*":
   version "1.2.4"
+  resolved "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.4.tgz"
+  integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
+
+"@types/send@*":
+  version "0.17.1"
+  resolved "https://registry.npmjs.org/@types/send/-/send-0.17.1.tgz"
+  integrity sha512-Cwo8LE/0rnvX7kIIa3QHCkcuF21c05Ayb0ZfxPiv0W8VRiZiNW/WuRupHKpqqGVGf7SUA44QSOUKaEd9lIrd/Q==
+  dependencies:
+    "@types/mime" "^1"
+    "@types/node" "*"
 
 "@types/serve-static@*":
   version "1.13.10"

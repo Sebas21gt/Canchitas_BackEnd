@@ -56,4 +56,9 @@ export class TeamController {
   // async getTeamsChampionship(@Param('championshipId') championshipId:number): Promise <any> {
   //   return await this.teamService.getTeamsChampionship(championshipId);
   // }  
+
+  @Get('/getTeamsChampionship/:championshipId')
+  async getTeamsChampionship(@Param('championshipId') championshipId:number): Promise <any> {
+    return await this.teamService.getTeamsChampionships(championshipId);
+  }
 }

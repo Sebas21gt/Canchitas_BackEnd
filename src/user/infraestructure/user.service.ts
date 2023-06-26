@@ -25,6 +25,18 @@ export class UserService {
 		return this.userRepository.createUser(userCreateDto, username);
   }
 
+	async userRegister(userCreateDto:UserCreateDto): Promise<any> {
+		const user = await this.userRepository.findOne({
+		where: { email: userCreateDto.email.trim(), status: StatusEnum.Active},
+		});
+
+		if (user){
+			return new MessageResponse(HttpStatus.OK, MessageEnum.USER_EXIST, null);
+		}
+
+		return this.userRepository.registerUser(userCreateDto);
+	}
+
   async getAll(): Promise<any> {
 		
 		const users = await this.userRepository.find({

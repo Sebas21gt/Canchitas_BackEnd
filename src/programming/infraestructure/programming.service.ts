@@ -155,17 +155,15 @@ export class ProgrammingService {
 
 	async viewProgramming(
 		championshipId:number, 
-		groupId:number, 
-		dateNumber:number): 
-	Promise<MessageResponse> {
-		const viewProgramming: ViewProgrammingEntity[] = [];
-		const programming = await this.programmingRepository.find({
-			where: {
-				championshipId,
-				group: groupId, 
-				dateNumber,
-				status: StatusEnum.Active
-			}
+		groupId:number): 
+		Promise<MessageResponse> {
+			const viewProgramming: ViewProgrammingEntity[] = [];
+			const programming = await this.programmingRepository.find({
+				where: {
+					championshipId,
+					group: groupId, 
+					status: StatusEnum.Active
+				}
 		});
 		for (const prog of programming){
 			const viewProg = new ViewProgrammingEntity();
@@ -208,15 +206,13 @@ export class ProgrammingService {
 
 	async viewProgrammingDate(
 		championshipId:number, 
-		groupId:number, 
-		dateNumber:number): 
+		groupId:number): 
 		Promise<MessageResponse> {
 		const viewProgrammingDate: ViewProgrammingEntity[] = [];
 		const programming = await this.programmingRepository.find({
 			where: {
 				championshipId,
-				group: groupId, 
-				dateNumber,
+				group: groupId,
 				status: StatusEnum.Active
 			}
 		});

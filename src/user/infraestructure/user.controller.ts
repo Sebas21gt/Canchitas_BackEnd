@@ -11,14 +11,17 @@ const jwt = require('jsonwebtoken');
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post()
+  @Post('/register')
   @UsePipes(new ValidationPipe())
-  async userCreate(@Req() request: Request, @Body() userCreateDto:UserCreateDto): Promise<any> {
-    const authorization = request.headers['authorization'];
-    const token = authorization.split(' ')[1];
-    var decoded = jwt.decode(token, process.env.JWT_ACCESS_TOKEN);
-    return await this.userService.userCreate(userCreateDto, decoded.email);
+  async userRegister(@Body() userCreateDto:UserCreateDto): Promise<any> {
+    return await this.userService.userRegister(userCreateDto);
   }
+  // async userCreate(@Req() request: Request, @Body() userCreateDto:UserCreateDto): Promise<any> {
+  //   const authorization = request.headers['authorization'];
+  //   const token = authorization.split(' ')[1];
+  //   var decoded = jwt.decode(token, process.env.JWT_ACCESS_TOKEN);
+  //   return await this.userService.userCreate(userCreateDto, decoded.email);
+  // }
 
   @Put('/:id')
   userUpdate(@Param('id', ParseIntPipe) id:number, @Body() userUpdateDto: UserUpdateDto): any {

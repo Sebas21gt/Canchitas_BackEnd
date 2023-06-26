@@ -27,4 +27,23 @@ export class UserRepository extends Repository<UserEntity> {
     delete user.password;
       return user;
   } 
+
+  async registerUser(userDto: UserCreateDto): Promise<any> {
+    
+    const user = new UserEntity();
+    Object.assign(user, userDto);
+          
+    try {
+      user.email = user.email.trim();
+      user.status = StatusEnum.Active;
+      user.userCreation = "System";
+      await user.save();
+    } catch (e) {
+      console.log(e);
+      return new MessageResponse(HttpStatus.NOT_FOUND, MessageEnum.ENTITY_ERROR_CREATE, null);
+    }
+    
+    delete user.password;
+      return user;
+  }
 }

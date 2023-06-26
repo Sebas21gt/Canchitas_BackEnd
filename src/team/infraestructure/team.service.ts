@@ -99,5 +99,18 @@ export class TeamService {
 			return new MessageResponse(HttpStatus.NOT_FOUND, MessageEnum.ENTITY_SELECT_EMPTY, null);
 		}
 		return new MessageResponse(HttpStatus.OK, MessageEnum.ENTITY_SELECT, teams);
-	}	
+	}
+	
+	async getTeamsChampionships(championshipId:number): Promise<MessageResponse> {
+		const teams = await this.teamChampionshipRepository.find({
+			where: { 
+				championshipId: championshipId,
+			 },
+			//relations: ['teams_championships'],
+		});
+		if (teams.length < 1) {
+			return new MessageResponse(HttpStatus.NOT_FOUND, MessageEnum.ENTITY_SELECT_EMPTY, null);
+		}
+		return new MessageResponse(HttpStatus.OK, MessageEnum.ENTITY_SELECT, teams);
+	}
 }

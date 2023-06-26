@@ -37,20 +37,18 @@ export class ProgrammingController {
     return await this.programmingService.getRR();
   }
 
-  @Get('/view-programming/:championshipId/:groupId/:dateNumber')
+  @Get('/view-programming/:championshipId/:groupId')
   async viewProgramming(
     @Param('championshipId') championshipId:number, 
-    @Param('groupId') groupId:number, 
-    @Param('dateNumber') dateNumber:number): Promise<any> {
-    return await this.programmingService.viewProgramming(championshipId, groupId, dateNumber);
+    @Param('groupId') groupId:number): Promise<any> {
+    return await this.programmingService.viewProgramming(championshipId, groupId);
   }
 
-  @Get('/view-programming-date/:championshipId/:groupId/:dateNumber')
+  @Get('/view-programming-date/:championshipId/:groupId')
   async viewProgrammingDate(
     @Param('championshipId') championshipId:number, 
-    @Param('groupId') groupId:number, 
-    @Param('dateNumber') dateNumber:number): Promise<any> {
-    return await this.programmingService.viewProgrammingDate(championshipId, groupId, dateNumber);
+    @Param('groupId') groupId:number): Promise<any> {
+    return await this.programmingService.viewProgrammingDate(championshipId, groupId);
   }
 
   @Post('/assing-date')
